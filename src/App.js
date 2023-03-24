@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Character from "./components/Character/Character";
 //import data from "./mocks/handlers"
 const App = () => {
-  const [characters, setCharacters] = useState();
+  const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
     axios.get("https://swapi.dev/api/people/")
@@ -19,9 +19,9 @@ const App = () => {
   return (
     <StyledApp>
       <StyledHeader>Characters</StyledHeader>
-      {characters.map((props) => (
+       {characters.map((props) => (
         <Character key={props.name} name={props.name} />
-      ))}
+      ))} 
     </StyledApp>
   );
 };
